@@ -1,1 +1,1 @@
-# CansatJunior2024
+# Cansat Junior 2024 EBIRP
