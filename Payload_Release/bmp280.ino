@@ -4,13 +4,13 @@
 Adafruit_BMP280 bmp;  // I2C Interface
 Servo myservo;
 
-#define PNM 1023.50  //Pressão média nível do mar do dia
-#define LARGADA 1    // altitude da largada em metros
-#define DEBUG 1      //
+#define PNM 1023.50  // Average sea-level pressure
+#define LARGADA 1    // Drop altitude in meters
+#define DEBUG 1      
 
-int pos = 0;  // variavel para a posiçaõ do servo
+int pos = 0;  // Servo position 
 int servoPin = 26;
-float firstAlt = 0;  // variável da primeira medida de altitude
+float firstAlt = 0;  // First altitude in Setup
 float altitude = 0;
 unsigned long previousMillis = 0;
 const long interval = 500;
@@ -60,8 +60,8 @@ void loop() {
   Serial.println("  hPa");
 
   Serial.print(F("Approx altitude = "));
-  Serial.print(bmp.readAltitude(PNM));  //The "1019.66" is the pressure(hPa) at sea level in day in your region
-  Serial.println("  m");                //If you don't know it, modify it until you get your current  altitude
+  Serial.print(bmp.readAltitude(PNM));  
+  Serial.println("  m");                
   Serial.println();
   delay(2000);
 #endif
@@ -74,7 +74,7 @@ void loop() {
     if (altitude - firstAlt >= LARGADA) {
       for (pos = 0; pos <= 90; pos += 5) {
         myservo.write(pos);  // tell servo to go to position in variable 'pos'
-        delay(30);           // waits 15ms for the servo to reach the position        
+        delay(30);           // waits 30ms for the servo to reach the position        
       }
       myservo.detach();
       status = 1;
