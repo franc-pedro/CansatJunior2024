@@ -6,9 +6,9 @@ ___
 ###### Librarys to include
 
 - include <Adafruit_BMP280.h>
-- - https://github.com/adafruit/Adafruit_BMP280_Library/blob/master/Adafruit_BMP280.h
+   - https://github.com/adafruit/Adafruit_BMP280_Library/blob/master/Adafruit_BMP280.h
 - include <ESP32Servo.h>
-- - https://github.com/madhephaestus/ESP32Servo
+   - https://github.com/madhephaestus/ESP32Servo
 
 
 
